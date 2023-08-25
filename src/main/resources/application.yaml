@@ -1,0 +1,21 @@
+#spring.datasource.url: jdbc:h2:file:./camunda-h2-database
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: camunda
+    password: camunda-change-me
+    url: jdbc:postgresql://localhost:15432/camunda-db
+
+camunda:
+  bpm:
+    authorization:
+      enabled: true
+    admin-user:
+      id: jmarin
+      password: Asd,.-123
+
+  rest-api:
+    jwt:
+      secret-path: ./src/main/resources/secrets/jwt.pub
+      validator-class: net.openwebinars.camunda.config.ValidatorJwt
