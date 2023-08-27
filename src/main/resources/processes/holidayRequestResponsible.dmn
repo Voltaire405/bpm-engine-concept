@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_1fom481" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.19.0">
+  <decision id="holidayResponsible" name="Seleccionar responsable">
+    <decisionTable id="DecisionTable_1fbj9fn" hitPolicy="FIRST">
+      <input id="Input_1" label="Departamento del empleado" camunda:inputVariable="userDepartment">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" typeRef="string" />
+      <rule id="DecisionRule_02elvuo">
+        <inputEntry id="UnaryTests_1hms7r1">
+          <text>"development"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1oxrg3i">
+          <text>"alopez"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hwj5bw">
+        <inputEntry id="UnaryTests_0rimhpb">
+          <text>"sales"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0kg9mv8">
+          <text>"mjimenez"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12a4idb">
+        <inputEntry id="UnaryTests_1vo4bap">
+          <text>"mkt"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1sb4q7z">
+          <text>"lcampos"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1d5kwpu">
+        <inputEntry id="UnaryTests_00sjon0">
+          <text>"bi"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wfshnp">
+          <text>"tmoreno"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zcw4ky">
+        <inputEntry id="UnaryTests_1phcbxk">
+          <text>"idi"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0f0o8qx">
+          <text>"aneira"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ivnstq">
+        <inputEntry id="UnaryTests_02kappk">
+          <text>"rrhh"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hcm8d1">
+          <text>"jortelli"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="holidayResponsible">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

@@ -14,8 +14,9 @@ camunda:
     admin-user:
       id: jmarin
       password: Asd,.-123
-
+  initializer:
+    populate: classpath:populate/users.csv
   rest-api:
     jwt:
       secret-path: ./src/main/resources/secrets/jwt.pub
-      validator-class: net.openwebinars.camunda.config.ValidatorJwt
+      validator-class: com.gedsys.workflow.config.ValidatorJWT
