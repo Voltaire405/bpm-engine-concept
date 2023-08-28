@@ -14,6 +14,7 @@ camunda:
     admin-user:
       id: jmarin
       password: Asd,.-123
+    deployment-resource-pattern: classpath:processes/*.bpmn, classpath:processes/*.dmn
   initializer:
     populate: classpath:populate/users.csv
   rest-api:

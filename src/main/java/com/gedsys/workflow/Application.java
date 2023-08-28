@@ -1,7 +1,10 @@
 package com.gedsys.workflow;
 
+import org.camunda.bpm.engine.impl.cfg.ProcessEnginePlugin;
+import org.camunda.connect.plugin.impl.ConnectProcessEnginePlugin;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class Application {
@@ -10,4 +13,8 @@ public class Application {
     SpringApplication.run(Application.class, args);
   }
 
+  @Bean
+  public static ProcessEnginePlugin holidaysAvailablePlugin() {
+    return new ConnectProcessEnginePlugin();
+  }
 }
