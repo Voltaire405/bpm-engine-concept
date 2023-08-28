@@ -33,7 +33,7 @@
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_1nusjlj" sourceRef="StartEvent_1" targetRef="Activity_0q23a8h" />
     <bpmn:sequenceFlow id="Flow_0hmkco5" name="Solicitud rechazada" sourceRef="Gateway_01p09u9" targetRef="Activity_0q23a8h">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${rejected == ture}</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${rejected == true}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_13d48vx" sourceRef="Activity_0q23a8h" targetRef="Activity_187xq8k" />
     <bpmn:sequenceFlow id="Flow_03ifydp" sourceRef="Activity_0w20isw" targetRef="Gateway_01p09u9" />

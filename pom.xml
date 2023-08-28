@@ -88,6 +88,12 @@
     </dependency>
 
     <dependency>
+      <groupId>org.camunda.bpm.springboot</groupId>
+      <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
+      <version>7.19.0</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.camunda.template-engines</groupId>
       <artifactId>camunda-template-engines-freemarker</artifactId>
       <scope>provided</scope>
