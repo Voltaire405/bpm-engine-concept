@@ -17,8 +17,8 @@
       </bpmn:lane>
       <bpmn:lane id="Lane_01apce8" name="Sistema">
         <bpmn:flowNodeRef>Activity_187xq8k</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_1mi30sx</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0dw4buu</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1mi30sx</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
     <bpmn:userTask id="Activity_0w20isw" name="Validacion de solicitudes" camunda:formKey="validate-holiday-form" camunda:assignee="${responsible}">
@@ -58,6 +58,11 @@
       <bpmn:incoming>Flow_13d48vx</bpmn:incoming>
       <bpmn:outgoing>Flow_0rz88tf</bpmn:outgoing>
     </bpmn:businessRuleTask>
+    <bpmn:endEvent id="Event_0dw4buu">
+      <bpmn:incoming>Flow_06102ys</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_06102ys" sourceRef="Activity_1mi30sx" targetRef="Event_0dw4buu" />
+    <bpmn:dataStoreReference id="DataStoreReference_1wxomji" />
     <bpmn:serviceTask id="Activity_1mi30sx" name="Notificar por correo electronico">
       <bpmn:extensionElements>
         <camunda:executionListener class="com.gedsys.workflow.execution.StoreHolidays" event="start" />
@@ -78,11 +83,6 @@
         <bpmn:targetRef>Property_104kn8e</bpmn:targetRef>
       </bpmn:dataInputAssociation>
     </bpmn:serviceTask>
-    <bpmn:endEvent id="Event_0dw4buu">
-      <bpmn:incoming>Flow_06102ys</bpmn:incoming>
-    </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_06102ys" sourceRef="Activity_1mi30sx" targetRef="Event_0dw4buu" />
-    <bpmn:dataStoreReference id="DataStoreReference_1wxomji" />
     <bpmn:textAnnotation id="TextAnnotation_1vkq4e0">
       <bpmn:text>Guardamos en una base de datos la solicitud de vacaciones</bpmn:text>
     </bpmn:textAnnotation>
@@ -94,20 +94,16 @@
         <dc:Bounds x="129" y="115" width="890" height="500" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Lane_0p1sqbd_di" bpmnElement="Lane_0p1sqbd" isHorizontal="true">
-        <dc:Bounds x="159" y="115" width="860" height="167" />
+      <bpmndi:BPMNShape id="Lane_01apce8_di" bpmnElement="Lane_01apce8" isHorizontal="true">
+        <dc:Bounds x="159" y="449" width="860" height="166" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_16t0hby_di" bpmnElement="Lane_16t0hby" isHorizontal="true">
         <dc:Bounds x="159" y="282" width="860" height="167" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Lane_01apce8_di" bpmnElement="Lane_01apce8" isHorizontal="true">
-        <dc:Bounds x="159" y="449" width="860" height="166" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="TextAnnotation_1vkq4e0_di" bpmnElement="TextAnnotation_1vkq4e0">
-        <dc:Bounds x="260" y="560" width="340" height="37" />
+      <bpmndi:BPMNShape id="Lane_0p1sqbd_di" bpmnElement="Lane_0p1sqbd" isHorizontal="true">
+        <dc:Bounds x="159" y="115" width="860" height="167" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_19i8bef_di" bpmnElement="Activity_0w20isw">
@@ -134,20 +130,20 @@
         <dc:Bounds x="350" y="470" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0kzf3fj_di" bpmnElement="Activity_1mi30sx">
-        <dc:Bounds x="750" y="450" width="100" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0dw4buu_di" bpmnElement="Event_0dw4buu">
         <dc:Bounds x="952" y="472" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="DataStoreReference_1wxomji_di" bpmnElement="DataStoreReference_1wxomji">
         <dc:Bounds x="675" y="535" width="50" height="50" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Association_14r6uvl_di" bpmnElement="Association_14r6uvl">
-        <di:waypoint x="675" y="563" />
-        <di:waypoint x="600" y="571" />
-      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_1vkq4e0_di" bpmnElement="TextAnnotation_1vkq4e0">
+        <dc:Bounds x="260" y="560" width="340" height="37" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0kzf3fj_di" bpmnElement="Activity_1mi30sx">
+        <dc:Bounds x="750" y="460" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1nusjlj_di" bpmnElement="Flow_1nusjlj">
         <di:waypoint x="238" y="177" />
         <di:waypoint x="320" y="177" />
@@ -179,10 +175,10 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0uob580_di" bpmnElement="Flow_0uob580">
         <di:waypoint x="700" y="395" />
-        <di:waypoint x="700" y="490" />
-        <di:waypoint x="750" y="490" />
+        <di:waypoint x="700" y="500" />
+        <di:waypoint x="750" y="500" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="692" y="456" width="47" height="27" />
+          <dc:Bounds x="692" y="464" width="47" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0rz88tf_di" bpmnElement="Flow_0rz88tf">
@@ -191,12 +187,18 @@
         <di:waypoint x="490" y="410" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_06102ys_di" bpmnElement="Flow_06102ys">
-        <di:waypoint x="850" y="490" />
+        <di:waypoint x="850" y="500" />
+        <di:waypoint x="901" y="500" />
+        <di:waypoint x="901" y="490" />
         <di:waypoint x="952" y="490" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_14r6uvl_di" bpmnElement="Association_14r6uvl">
+        <di:waypoint x="675" y="563" />
+        <di:waypoint x="600" y="571" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="DataInputAssociation_0poa1qc_di" bpmnElement="DataInputAssociation_0poa1qc">
-        <di:waypoint x="725" y="546" />
-        <di:waypoint x="757" y="529" />
+        <di:waypoint x="725" y="548" />
+        <di:waypoint x="753" y="536" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

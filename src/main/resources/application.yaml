@@ -7,6 +7,13 @@
 #    password: camunda-change-me
 #    url: jdbc:postgresql://localhost:15432/camunda-db
 
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    password: Asd,.-123
+    url: jdbc:sqlserver://localhost:1433;databaseName=camunda-db;sslProtocol=TLS;encrypt=false;trustServerCertificate=true
+
 
 
 camunda:

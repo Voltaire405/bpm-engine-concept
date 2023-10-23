@@ -43,10 +43,6 @@
   </dependencyManagement>
 
   <dependencies>
-    <dependency>
-      <groupId>org.camunda.bpm.springboot</groupId>
-      <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
-    </dependency>
 
     <dependency>
       <groupId>org.camunda.bpm.springboot</groupId>
@@ -69,7 +65,12 @@
       <version>42.5.4</version>
     </dependency>
 
-<!--    Permitira agregar conectores dentro del proyecto-->
+    <dependency>
+      <groupId>com.microsoft.sqlserver</groupId>
+      <artifactId>mssql-jdbc</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
     <dependency>
       <groupId>org.camunda.bpm</groupId>
       <artifactId>camunda-engine-plugin-connect</artifactId>
